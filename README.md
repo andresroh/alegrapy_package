@@ -1,6 +1,6 @@
 # AlegraPy
 
-Este paquete nos permite consumir el API del la plataforma de facturacion Alegra.
+Este paquete nos permite consumir el API del la plataforma de facturacion Alegra mediante python 🐍
 
 ## Características
 

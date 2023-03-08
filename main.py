@@ -1,2 +1,13 @@
+from alegra.invoices import invoices
+from alegra.session import session
+
+# this module contains login info,delete it and use you information
+from keys import user, token 
+
 if __name__ == '__main__':
-    pass
+
+    session.user = user # use your_email@domnain.com
+    session.token = token # use you token
+
+    invoice = invoices()
+    invoice.read()
