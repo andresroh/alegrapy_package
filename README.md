@@ -12,6 +12,23 @@ Este paquete nos permite consumir el API del la plataforma de facturacion Alegra
 
 En construcción...
 
+## Uso
+
+```py
+from alegra import invoices,contacts, session
+
+session.user = "your_email@domnain.com"
+session.token = "your_token"
+
+invoice = invoices()
+invoice.read(1,fields='pdf')
+invoice.list(0,3)
+
+contact = contacts()
+contact.read(12)
+contact.list(0,2)
+```
+
 ## Créditos
 
 Camilo Andrés Rodriguez

@@ -23,25 +23,46 @@ class actions:
         
 
     def list(self,start,limit,**kwargs):
+        """search multiples results and returns a list
+
+        Args:
+            start (int): initial position
+            limit (int): list lenght (max 30)
+        """
 
         url = f"{session.url}{self.endpoint}"
-        print(url)
         params = {'start':start,
                 'limit':limit,
                 'order_direction':'ASC',
                 'order_field':'id'
                 }
-        print(params)
+ 
         if kwargs:
             params.update(kwargs)
 
         session.query('get',url,params=params)
         
 
-    def create(self):
-        pass
+    def create(self,params):
+        """send information to create in alegra
 
-    def delete(self):
-        pass
+        Args:
+            params (dict): data to create
+        """
+
+        url = f"{session.url}{self.endpoint}"
+        session.query('post',url,params=params)
+        
+
+    def delete(self,id):
+        """delete by id
+
+        Args:
+            id (int): query id 
+        """
+
+        url = f"{session.url}{self.endpoint}/{id}"
+        session.query('get',url)
+    
         
 

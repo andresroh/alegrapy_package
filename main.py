@@ -1,6 +1,4 @@
-from alegra.invoices import invoices
-from alegra.contacts import contacts
-from alegra.session import session
+from alegra import invoices,contacts, session
 
 # this module contains login info, delete it and use you information
 from keys import user, token 
