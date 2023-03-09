@@ -2,13 +2,19 @@ from alegra.session import session
 
 class actions:
 
+    endpoint = ""
+
     def __init__(self) -> None:
         pass
 
-    def read(self):
-        pass
-        # print(f"{session.url}{self.endpoint}")
-        # session.query()
+    def read(self,id):
+        """search by id
+
+        Args:
+            id (int): query id 
+        """
+        url = f"{session.url}{self.endpoint}/{id}"
+        session.query('get',url)
         
 
     def list(self):

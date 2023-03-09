@@ -18,28 +18,21 @@ class session():
         print(">>> header: ",self.headers)
 
     @classmethod    
-    def query(self,**kwargs):
-        
-        # self.create_auth()
-        # response = request(kwargs['method'],
-        #                    kwargs['url'], 
-        #                    params=kwargs['params'], 
-        #                    data=kwargs['data'],
-        #                    headers=self.headers
-        #                    )
+    def query(self,method,url,data={}):
 
         print('>>> request API')
+           
         self.create_auth()
-        print(">>> user: ",self.user)
+        response = request(method,
+                           url,  
+                           data=json.dumps(data),
+                           headers=self.headers
+                           )
 
+        print(response.json())
+        if response.status_code == 200:
+            print('successful conection')
+            return json.loads(response.text)
 
-        # if response.status_code == 200:
-        #     print('successful conection')
-        #     return json.loads(response.text)
-        # elif response.status_code == 201:
-        #     print('successful conection')
-        #     return json.loads(response.text) 
-        # else:
-        #     print('wrong conection')
-        #     print(response.json())
-        #     return False
+        print('wrong conection')
+        return False

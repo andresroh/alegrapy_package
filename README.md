@@ -4,13 +4,13 @@ Este paquete nos permite consumir el API del la plataforma de facturacion Alegra
 
 ## Características
 
-- Característica 1
-- Característica 2
-- Característica 3
+- Permite leer facturas, pagos, productos, contactos
+- Permite crear facturas, pagos, productos, contactos
+- Permite borrar facturas, pagos, productos, contactos
 
 ## Instalación
 
-Pasos para instalar y utilizar el proyecto:
+En construcción...
 
 ## Créditos
 
@@ -18,7 +18,7 @@ Camilo Andrés Rodriguez
 
 ## Licencia
 
-Este proyecto está bajo la Licencia [MIT]. Ver el archivo `LICENSE` para más detalles.
+Este proyecto está bajo la Licencia [MIT].
 
 ---
 
