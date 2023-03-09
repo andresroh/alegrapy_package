@@ -2,7 +2,7 @@ from alegra.invoices import invoices
 from alegra.contacts import contacts
 from alegra.session import session
 
-# this module contains login info,delete it and use you information
+# this module contains login info, delete it and use you information
 from keys import user, token 
 
 if __name__ == '__main__':
@@ -11,7 +11,9 @@ if __name__ == '__main__':
     session.token = token # use you token
 
     invoice = invoices()
-    invoice.read(1)
+    invoice.read(1,fields='pdf')
+    invoice.list(0,3)
 
     contact = contacts()
     contact.read(12)
+    contact.list(0,2)

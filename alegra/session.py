@@ -1,4 +1,5 @@
-import json,logging, base64
+import json,logging, base64 
+from pprint import pprint
 from requests import request
 
 class session():
@@ -15,21 +16,21 @@ class session():
         "return auth"
         api_key = base64.b64encode(f"{self.user}:{self.token}".encode()).decode()
         self.headers['Authorization'] = f"Basic {api_key}"
-        print(">>> header: ",self.headers)
 
     @classmethod    
-    def query(self,method,url,data={}):
+    def query(self,method,url,data={},params={}):
 
         print('>>> request API')
            
         self.create_auth()
         response = request(method,
-                           url,  
+                           url,
+                           params=params,   
                            data=json.dumps(data),
                            headers=self.headers
                            )
 
-        print(response.json())
+        pprint(response.json())
         if response.status_code == 200:
             print('successful conection')
             return json.loads(response.text)
