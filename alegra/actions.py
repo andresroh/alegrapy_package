@@ -18,8 +18,8 @@ class actions:
         if kwargs:
             params = kwargs
 
-        url = f"{session.url}{self.endpoint}/{id}"
-        session.query('get',url,params=params)
+        endpoint = f"{session.url}{self.endpoint}/{id}"
+        session.query('get',endpoint,params=params)
         
 
     def list(self,start,limit,**kwargs):
@@ -30,7 +30,7 @@ class actions:
             limit (int): list lenght (max 30)
         """
 
-        url = f"{session.url}{self.endpoint}"
+        endpoint = f"{session.url}{self.endpoint}"
         params = {'start':start,
                 'limit':limit,
                 'order_direction':'ASC',
@@ -40,7 +40,7 @@ class actions:
         if kwargs:
             params.update(kwargs)
 
-        session.query('get',url,params=params)
+        session.query('get',endpoint,params=params)
         
 
     def create(self,params):
@@ -50,8 +50,8 @@ class actions:
             params (dict): data to create
         """
 
-        url = f"{session.url}{self.endpoint}"
-        session.query('post',url,params=params)
+        endpoint = f"{session.url}{self.endpoint}"
+        session.query('post',endpoint,params=params)
         
 
     def delete(self,id):
@@ -61,8 +61,8 @@ class actions:
             id (int): query id 
         """
 
-        url = f"{session.url}{self.endpoint}/{id}"
-        session.query('get',url)
+        endpoint = f"{session.url}{self.endpoint}/{id}"
+        session.query('get',endpoint)
     
         
 

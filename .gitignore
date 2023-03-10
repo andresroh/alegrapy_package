@@ -155,3 +155,4 @@ cython_debug/
 # Specific files
 alegra_api.pkl
 keys.py
+alegra.log

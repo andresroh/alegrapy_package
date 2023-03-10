@@ -13,5 +13,5 @@ if __name__ == '__main__':
     invoice.list(0,3)
 
     contact = contacts()
-    contact.read(12)
+    contact.read(5000)
     contact.list(0,2)
