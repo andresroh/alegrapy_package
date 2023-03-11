@@ -1,5 +1,4 @@
-import json,logging, base64 
-from pprint import pprint
+import json, logging, base64 
 from requests import request
 
 logging.basicConfig(level=logging.INFO,
@@ -45,12 +44,11 @@ class session():
                            data=json.dumps(data),
                            headers=self.headers)
 
-        
+        short_url = url.replace("alegra.com/api/v1","...")
         if response.status_code == 200:
-
-            logging.debug('Successful conection')
-            logging.info(response.json())
+            
+            logging.info(f"{method} - {short_url} - Successful!")
             return json.loads(response.text)
 
-        logging.warning(response.json())
+        logging.warning(f"{method} - {short_url} - {response.json()['message']}")
         return None
