@@ -1,5 +1,6 @@
 from alegra.session import session
 
+
 class actions:
 
     endpoint = ""
@@ -7,11 +8,11 @@ class actions:
     def __init__(self) -> None:
         pass
 
-    def read(self,id,**kwargs):
+    def read(self, id, **kwargs):
         """search by id
 
         Args:
-            id (int): query id 
+            id (int): query id
         """
         params = {}
 
@@ -19,31 +20,29 @@ class actions:
             params = kwargs
 
         endpoint = f"{session.url}{self.endpoint}/{id}"
-        session.query('get',endpoint,params=params)
-        
+        session.query('get', endpoint, params=params)
 
-    def list(self,start,limit,**kwargs):
+    def list(self, start, limit, **kwargs):
         """search multiples results and returns a list
 
         Args:
             start (int): initial position
-            limit (int): list lenght (max 30)
+            limit (int): list length (max 30)
         """
 
         endpoint = f"{session.url}{self.endpoint}"
-        params = {'start':start,
-                'limit':limit,
-                'order_direction':'ASC',
-                'order_field':'id'
-                }
- 
+        params = {'start': start,
+                  'limit': limit,
+                  'order_direction': 'ASC',
+                  'order_field': 'id'
+                  }
+
         if kwargs:
             params.update(kwargs)
 
-        session.query('get',endpoint,params=params)
-        
+        session.query('get', endpoint, params=params)
 
-    def create(self,params):
+    def create(self, params):
         """send information to create in alegra
 
         Args:
@@ -51,18 +50,14 @@ class actions:
         """
 
         endpoint = f"{session.url}{self.endpoint}"
-        session.query('post',endpoint,params=params)
-        
+        session.query('post', endpoint, params=params)
 
-    def delete(self,id):
+    def delete(self, id):
         """delete by id
 
         Args:
-            id (int): query id 
+            id (int): query id
         """
 
         endpoint = f"{session.url}{self.endpoint}/{id}"
-        session.query('get',endpoint)
-    
-        
-
+        session.query('get', endpoint)

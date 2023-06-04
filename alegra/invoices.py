@@ -1,4 +1,3 @@
-from alegra.session import session
 from alegra.actions import actions
 
 
@@ -8,7 +7,3 @@ class invoices(actions):
 
     def __init__(self) -> None:
         pass
-
-
-        
-

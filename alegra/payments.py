@@ -1,4 +1,3 @@
-from alegra.session import session
 from alegra.actions import actions
 
 
